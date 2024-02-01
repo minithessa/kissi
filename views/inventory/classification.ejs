@@ -1,11 +1,12 @@
-/* ***************************
- *  The Content Heading
- * ************************** */
-
- <% if (title) { %>
+<%# Inventory classification heading %>
+<% if (title) { %>
     <h1><%= title %></h1>
     <% } else {
       res.redirect('/')
     } %>
 
-<%#messages() %>
+    <%# To display a custom dynamic message %>
+    <%# messages() %>
+
+    <%# Display classification grid %>
+    <%- grid %>
