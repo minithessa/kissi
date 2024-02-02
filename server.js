@@ -5,7 +5,7 @@ const app = express()
 const static= require("./routes/static")
 const baseController= require("./controllers/baseController")
 const inventoryRoute= require("./routes/inventoryRoute")
-const utilities= require("./utilities/")
+const utilities= require("./utilities"/)
 const pool = require('./database/')
 
  
@@ -15,13 +15,13 @@ const pool = require('./database/')
  *************************/
 app.set("view engine", "ejs")
 app.use(expressLayouts)
-app.set("layout", "./layouts/layout") // not at views root
+app.set("layout", "./layouts/layout")  
 
  
 /* ***********************
  * Routes
  *************************/
-app.use(static)
+app.use(require("./routes/static"))
 app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", utilities.handleErrors(inventoryRoute))
  
