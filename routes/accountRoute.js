@@ -7,3 +7,8 @@ const utilities = require("../utilities")
 
 
 router.get("/login", utilities.handleErrors(accountController.buildLogin))
+
+
+
+
+module.exports = router
