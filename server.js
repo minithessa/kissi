@@ -54,7 +54,12 @@ app.use(function(req, res, next){
  *************************/
 app.use(static)
 app.get("/", utilities.handleErrors(baseController.buildHome))
-app.use("/inv", utilities.handleErrors(inventoryRoute))
+// Inventory routes
+app.use("/inv", inventoryRoute)
+
+app.get("/error", utilities.handleErrors(baseController.buildError))
+// Account routes - Unit 4, activity
+app.use("/account", require("./routes/accountRoute"))
  
  
 
