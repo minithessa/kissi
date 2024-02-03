@@ -1,8 +1,3 @@
- 
-/* ***********************
- * Require Statements
- *************************/
- 
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const env = require("dotenv").config()
@@ -22,7 +17,7 @@ const pool = require('./database/')
  *************************/
 app.set("view engine", "ejs")
 app.use(expressLayouts) 
-app.use(require('connect-flash'))
+app.use(require('connect-flash')())
 app.set("layout", "./layouts/layout")  
 
 
@@ -39,6 +34,19 @@ app.use(session({
   saveUninitialized: true,
   name: 'sessionId',
 }))
+
+
+
+
+// Express Messages Middleware
+app.use(require('connect-flash')())
+app.use(function(req, res, next){
+  res.locals.messages = require('express-messages')(req, res)
+  next()
+})
+
+
+
 
  
 /* ***********************
