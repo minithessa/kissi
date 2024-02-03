@@ -1,6 +1,5 @@
 /* **************************************
  *   Account Model
- *   Unit 4, Process Registration Activity
  * ************************************ */
 
 const pool = require("../database/");
