@@ -1,10 +1,3 @@
-<% if (title) { %>
-    <h1><%= title %></h1>
-    <% } else {
-      res.redirect('/')
-} %>
-
-<%- messages() %>
 
 
 <!-- Login Form -->
@@ -12,7 +5,7 @@
     <form id="loginForm" action="/account/login" method="post">
         <div class="email">
             <label for="login_email">Email: </label>
-            <input id="login_email" name="account_email" type="email" placeholder="youremail@email.com" 
+            <input id="login_email" name="account_email" type="email" placeholder="youremail@exemple.com" 
             required value="<%= locals.account_email %>"
             > 
         </div>
