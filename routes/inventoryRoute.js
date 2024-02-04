@@ -1,3 +1,19 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Needed Resources
 const express = require("express");
 const router = new express.Router();
@@ -5,25 +21,27 @@ const invController = require("../controllers/invController");
 const utilities = require("../utilities/");
 const regValidate = require("../utilities/inventory-validation");
 
- 
+// Route to build inventory by classification view
 router.get(
   "/type/:classificationId",
   utilities.handleErrors(invController.buildByClassificationId),
 );
 
- 
+// Route to build inventory view
 router.get(
   "/detail/:inventoryId",
   utilities.handleErrors(invController.buildByModelId),
 );
 
+// Route to build management view
 router.get("/", invController.buildManagement);
 
+// Route to build add-classification view
 router.get("/add-classification", invController.BuildAddClassification);
 
 /* ***********************
- *   Add the new Classification
-   *************************/
+ *  Add the new Classification
+  *************************/
 router.post(
   "/add-classification",
   regValidate.classificationRules(),
@@ -32,13 +50,13 @@ router.post(
 );
 
 /* ***********************
- * Add-Inventory View
+ *  Add-Inventory View
    *************************/
 router.get("/add-inventory", invController.BuildAddInventory);
 
 /* ***********************
- * Add the new Inventory
-   *************************/
+ * Unit 4 Add the new Inventory
+  *************************/
 router.post(
   "/add-inventory",
   regValidate.inventoryRules(),
@@ -47,9 +65,6 @@ router.post(
 );
 
 module.exports = router;
-
-
-
 
 
 
