@@ -54,14 +54,36 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 
 app.get("/error", utilities.handleErrors(baseController.buildError))
-// Account routes - Unit 4, activity
 app.use("/account", require("./routes/accountRoute"))
  
- 
-// Index route
+ // Index route
 app.get("/",function(req, res){
   res.render("index",{title:"Home"})
 })
+
+
+app.use(async (req, res, next) => {
+  next({ status: 404, message: "Sorry, we appear to have lost that page." });
+});
+
+
+app.use(async (err, req, res, next) => {
+  let nav = await utilities.getNav();
+  console.error(`Error at: "${req.originalUrl}": ${err.message}`);
+  if (err.status == 404) {
+    message = err.message;
+  }
+  if (err.status == 500) {
+    message = err.message;
+  } else {
+    message = "There was a crash. Maybe try different route?";
+  }
+  res.render("errors/error", {
+    title: err.status || "Server Error",
+    message,
+    nav,
+  });
+});
 
 /* ***********************
  * Local Server Information
