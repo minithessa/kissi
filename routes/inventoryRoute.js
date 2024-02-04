@@ -11,12 +11,6 @@ router.get(
   utilities.handleErrors(invController.buildByClassificationId),
 );
 
-app.get('function(req, res){
- 
-});
-
-
-
 // Route to build inventory view
 router.get(
   "/detail/:inventoryId",
