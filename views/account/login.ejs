@@ -6,10 +6,8 @@
 
 <%- messages() %>
 
-
- 
-<div class="form-box">
-<section class="login_form">
+    <div class="form-container">
+    <div class="form">
     <form id="loginForm" action="/account/login" method="post">
         <div class="email">
             <label for="login_email">Email: </label>
@@ -17,23 +15,19 @@
             required value="<%= locals.account_email %>"
             > 
         </div>
-
-        <div class="password">
+        <div>
             <label for="login_password">Password: </label>
             <input id="login_password" name="account_password" type="password" placeholder="Password" 
-            required
-            > 
-            
+            required> 
         </div>
 
-        <button type="submit" class="form-btn">Login</button>
+        <button type="submit" class="form-button">Login</button>
 
         <div class="register">
-            <p>No account? </p>
-            <a href="/account/register">Register here</a>
+            <p class="login-link">No account? 
+           <a href="/account/register">Register here</a></p>
             
         </div>
     </form>
-
-</div>
- </section>
+    </div>
+    </div>
