@@ -1,19 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Needed Resources
 const express = require("express");
 const router = new express.Router();
@@ -26,6 +10,18 @@ router.get(
   "/type/:classificationId",
   utilities.handleErrors(invController.buildByClassificationId),
 );
+
+
+
+
+
+app.get('/user/all', function(req, res){
+  Controller.Create
+});
+
+
+
+
 
 // Route to build inventory view
 router.get(
@@ -55,7 +51,7 @@ router.post(
 router.get("/add-inventory", invController.BuildAddInventory);
 
 /* ***********************
- * Unit 4 Add the new Inventory
+ * Add the new Inventory
   *************************/
 router.post(
   "/add-inventory",
