@@ -9,9 +9,6 @@ const utilities= require("./utilities/")
 const session = require("express-session")
 const pool = require('./database/')
 
-
- 
-
 /* ***********************
  *  View Engine and Templates
  *************************/
@@ -35,20 +32,18 @@ app.use(session({
   name: 'sessionId',
 }))
 
-
-
-
 // Express Messages Middleware
-app.use(require('connect-flash')())
+app.use(require('connect-flash')());
 app.use(function(req, res, next){
-  res.locals.messages = require('express-messages')(req, res)
-  next()
-})
+  res.locals.messages = require('express-messages')(req, res);
+  next();
+});
+
+//  Process Registration 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
 
 
-
-
- 
 /* ***********************
  * Routes
  *************************/
@@ -62,9 +57,7 @@ app.get("/error", utilities.handleErrors(baseController.buildError))
 app.use("/account", require("./routes/accountRoute"))
  
  
-
-
- // Index route
+// Index route
 app.get("/",function(req, res){
   res.render("index",{title:"Home"})
 })
