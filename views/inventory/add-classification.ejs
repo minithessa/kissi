@@ -20,7 +20,8 @@
 <% } %>
 
 
-<div">
+    <div class="form-container">
+    <div class="form">
     <form action="/inv/add-classification" method="post">
             <label for="classification_name">Classification Name: </label>
             <p>Name must be alphabetic characters only.</p>
@@ -28,6 +29,7 @@
                 required 
                 value="<%= locals.add_classification %>"
                 pattern="[a-zA-Z]*" > 
-   <button type="submit" class="form-btn">Add Classification</button>
+   <button type="submit" class="form-button">Add Classification</button>
 </form>
+</div>
 </div>
