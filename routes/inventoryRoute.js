@@ -57,4 +57,4 @@ module.exports = router;
 
 
 
-module.exports = {getClassifications, getInventoryByClassificationId};
+ 
