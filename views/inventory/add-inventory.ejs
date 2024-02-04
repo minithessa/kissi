@@ -18,7 +18,7 @@
 <% } %>
 
 
-<div class="form-box">
+<div>
     <form action="/inv/add-inventory" method="post">
         <div>
             <h3>All fields are required.</h3>
@@ -26,11 +26,8 @@
         <div class="inv-label">
             <label for="select_classification">Classification: </label>
             <%- selectList %>
-        </div>
-
-        <br>
-
-         <div class="inv-label"> 
+        </div><br>
+        div class="inv-label"> 
         <label for="make">Make:</label>
         <input id="make" name="inv_make" type="text" placeholder="Min of 3 characters" 
             required
