@@ -402,4 +402,7 @@ font-family:'Edu NSW ACT Foundation',cursive;
             text-align: center;
             margin-top: 70px;
         }
- 
+
+       .login-link{
+        color: green;
+       }
