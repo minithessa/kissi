@@ -55,7 +55,9 @@ app.use("/inv", inventoryRoute)
 app.get("/error", utilities.handleErrors(baseController.buildError))
 app.use("/account", require("./routes/accountRoute"))
 // Index route
-
+app.get("/",function(req, res){
+  res.render("index",{title:"Home"})
+})
 
 app.use(async (req, res, next) => {
   next({ status: 404, message: "Sorry, we appear to have lost that page." });
