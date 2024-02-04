@@ -16,7 +16,7 @@ router.get(
 
 
 app.get('/user/all', function(req, res){
-  Controller.Create
+ 
 });
 
 
