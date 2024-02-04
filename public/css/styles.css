@@ -382,3 +382,16 @@ input:required:invalid, input:focus:invalid {
  background-position: right top;
  background-repeat: no-repeat;
  }
+
+
+
+
+
+.form_login{
+ margin: auto;
+  width: 30%;
+  border-radius: 5px;
+  background-color: grey;
+  padding: 20px;
+  font-family: 'Work Sans', sans-serif;
+}
