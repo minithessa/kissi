@@ -11,11 +11,7 @@ router.get(
   utilities.handleErrors(invController.buildByClassificationId),
 );
 
-
-
-
-
-app.get('/user/all', function(req, res){
+app.get('function(req, res){
  
 });
 
