@@ -369,29 +369,37 @@ font-family:'Edu NSW ACT Foundation',cursive;
   }
 }
 
+      .form {
+            background-color: #fff;
+            width: 300px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px grey;
+            text-align: center;  
+        }
 
+       .form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid blue;
+            border-radius: 5px;
+            box-sizing: border-box;  
+        }
 
+        .form-button {
+            background-color: #4c96d7;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 100%;  
+        }
 
-input:required:invalid, input:focus:invalid {
- background-image: url(/images/invalid.png);
- background-position: right top;
- background-repeat: no-repeat;
-}
- input:required:valid {
- background-image: url(/images/valid.png);
- background-position: right top;
- background-repeat: no-repeat;
- }
-
-
-
-
-
-.form_login{
- margin: auto;
-  width: 30%;
-  border-radius: 5px;
-  background-color: grey;
-  padding: 20px;
-  font-family: 'Work Sans', sans-serif;
-}
+      .form-container {
+            text-align: center;
+            margin-top: 70px;
+        }
+ 
