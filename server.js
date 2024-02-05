@@ -68,10 +68,13 @@ app.use("/inv",utilities.handleErrors(inventoryRoute))
 app.use("/error",utilities.handleErrors(errorRoute))
 
 
-// Index route
-app.get("/",function(req, res){
-  res.render("index",{title:"Home"})
-})
+
+
+
+
+
+
+
 
 app.use(async (req, res, next) => {
   next({ status: 404, message: "Sorry, we appear to have lost that page." });
