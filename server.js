@@ -15,9 +15,6 @@ const pool = require('./database/')
 
 
 
-
-
-
 /* ***********************
  *  View Engine and Templates
  *************************/
