@@ -72,6 +72,10 @@ app.use("/error",utilities.handleErrors(errorRoute))
 
 
 
+// Index route
+app.get("/",function(req, res){
+  res.render("index",{title:"Home"})
+})
 
 
 
