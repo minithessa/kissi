@@ -66,8 +66,7 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv",utilities.handleErrors(inventoryRoute))
 app.use("/account",utilities.handleErrors(accountRoute))
 app.use("/error",utilities.handleErrors(errorRoute))
-
-
+app.get("/error", utilities.handleErrors(baseController.buildError))
 
 app.use(async (req, res, next) => {
   next({ status: 404, message: "Sorry, we appear to have lost that page." });
