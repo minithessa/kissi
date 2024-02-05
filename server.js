@@ -55,10 +55,9 @@ app.use(bodyParser.urlencoded({ extended: true })) // for parsing application/x-
  *************************/
 app.use(static)
 app.get("/", utilities.handleErrors(baseController.buildHome))
-// Inventory routes
-app.use("/inv", inventoryRoute)
+
 app.get("/error", utilities.handleErrors(baseController.buildError))
-app.use("/account", require("./routes/accountRoute"))
+
 
 
 
