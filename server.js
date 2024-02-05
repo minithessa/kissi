@@ -10,6 +10,11 @@ const session = require("express-session")
 const pool = require('./database/')
 const bodyParser = require("body-parser")
 
+const accountRoute = require("./routes/accountRoute")
+
+
+
+
 /* ***********************
  *  View Engine and Templates
  *************************/
@@ -54,6 +59,16 @@ app.get("/", utilities.handleErrors(baseController.buildHome))
 app.use("/inv", inventoryRoute)
 app.get("/error", utilities.handleErrors(baseController.buildError))
 app.use("/account", require("./routes/accountRoute"))
+
+
+
+
+
+app.use("/account",utilities.handleErrors(accountRoute))
+app.use("/inv",utilities.handleErrors(inventoryRoute))
+app.use("/error",utilities.handleErrors(errorRoute))
+
+
 // Index route
 app.get("/",function(req, res){
   res.render("index",{title:"Home"})
