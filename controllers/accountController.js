@@ -4,6 +4,10 @@
 const accountModel = require("../models/account-model");
 const utilities = require('../utilities')
 const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken")
+require("dotenv").config()
+
+const accountCont = {}
 
 /* ****************************************
 *  Deliver login view
@@ -28,6 +32,31 @@ async function buildRegister (req, res, next) {
         errors: null,
     })
 }
+
+
+
+
+
+
+/* ***************************
+ *  Account Management
+ * ************************** */
+accountCont.accountManagement = async function (req, res, next) {
+    //const account_id = req.params.accountId
+    //const data = await accountModel.getAccountById(account_id)
+    let nav = await utilities.getNav()
+    
+    res.render("account/management", {
+      title: "Account Management",
+      nav,
+      errors: null,
+    })
+  }
+
+
+
+
+
 
 
 /* ****************************************
