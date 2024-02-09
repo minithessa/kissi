@@ -7,29 +7,21 @@ const utilities = require("../utilities/")
 
 
 // Route to build inventory by classification view
-router.get(
-  "/type/:classificationId",
-  utilities.handleErrors(invController.buildByClassificationId),
-);
-
-// Route to build inventory view
-router.get(
-  "/detail/:inventoryId",
-  utilities.handleErrors(invController.buildByModelId),
-);
-
-// Route to build management view
-router.get("/", invController.buildManagement);
-
-// Route to build add-classification view
+router.get("/type/:classificationId",utilities.handleErrors(invController.buildByClassificationId));
+router.get("/detail/:inventoryId", utilities.handleErrors(invController.buildByModelId));
+router.get("/", utilities.handleErrors(invController.buildManagement));
+router.get("/addVehicle", utilities.handleErrors(invController.buildAddVehicle));
 router.get("/add-classification", invController.BuildAddClassification);
+router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
+router.get("/edit/:invId", utilities.handleErrors(invController.buildEditInventory))
+router.get("/delete/:invId", utilities.handleErrors(invController.buildDeleteInventory))
 
 /* ***********************
  *  Add the new Classification
   *************************/
 router.post(
   "/add-classification",
-  regValidate.classificationRules(),
+  regValidate.addclassificationRules(),
   regValidate.checkClassificationData,
   utilities.handleErrors(invController.AddNewClassification),
 );
@@ -44,10 +36,23 @@ router.get("/add-inventory", invController.BuildAddInventory);
   *************************/
 router.post(
   "/add-inventory",
-  regValidate.inventoryRules(),
+  regValidate.addInventoryRules(),
   regValidate.checkInventoryData,
   utilities.handleErrors(invController.AddNewInventory),
 );
+
+
+router.post(
+    "/update", 
+    invValidate.addIventoryRules(),
+    invValidate.checkUpdateInventoryData,
+    utilities.handleErrors(invController.updateInventory)
+)
+
+router.post(
+    "/delete",
+    utilities.handleErrors(invController.deleteInventory)
+)
 
 module.exports = router;
 
