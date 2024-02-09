@@ -11,7 +11,7 @@ router.get("/type/:classificationId",utilities.handleErrors(invController.buildB
 router.get("/detail/:inventoryId", utilities.handleErrors(invController.buildByModelId));
 router.get("/", utilities.handleErrors(invController.buildManagement));
 router.get("/addVehicle", utilities.handleErrors(invController.buildAddVehicle));
-router.get("/add-classification", invController.BuildAddClassification);
+router.get("/add-classification", utilities.handleErrors(invController.BuildAddClassification));
 router.get("/getInventory/:classification_id", utilities.handleErrors(invController.getInventoryJSON))
 router.get("/edit/:invId", utilities.handleErrors(invController.buildEditInventory))
 router.get("/delete/:invId", utilities.handleErrors(invController.buildDeleteInventory))
