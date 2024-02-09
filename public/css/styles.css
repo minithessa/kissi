@@ -370,7 +370,7 @@ font-family:'Edu NSW ACT Foundation',cursive;
 }
 
       .form {
-            background-color: #fff;
+            background-color:var(--grey);
             width: 300px;
             margin: 0 auto;
             padding: 20px;
@@ -390,7 +390,7 @@ font-family:'Edu NSW ACT Foundation',cursive;
 
         .form-button {
             background-color: #4c96d7;
-            color: white;
+            color: var(--white);
             border: none;
             padding: 10px 20px;
             border-radius: 20px;
@@ -404,5 +404,5 @@ font-family:'Edu NSW ACT Foundation',cursive;
         }
 
        .login-link{
-        color: green;
+        color: var(--green);
        }
