@@ -1,4 +1,11 @@
- 
+ :root {
+ --green:#008000;
+ --white:#FFFFFF;
+ --blue:#0000FF;
+ --grey:#D3D3D3;
+}
+
+
 *,
 *:before,
 *:after {
