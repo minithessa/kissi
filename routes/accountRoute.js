@@ -24,13 +24,6 @@ router.post(
 );
 
 
-
-
-
-
-
-
-
 // Process the login attempt
   router.post(
     "/login",
