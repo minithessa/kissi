@@ -42,8 +42,8 @@ router.post(
 
 router.post(
     "/update", 
-    invValidate.addIventoryRules(),
-    invValidate.checkUpdateInventoryData,
+    regValidate.addIventoryRules(),
+    regValidate.checkUpdateInventoryData,
     utilities.handleErrors(invController.updateInventory)
 )
 
