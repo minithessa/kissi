@@ -20,8 +20,7 @@ router.get("/delete/:invId", utilities.handleErrors(invController.buildDeleteInv
  *  Add the new Classification
   *************************/
 router.post(
-  "/add-classification",
-  regValidate.addclassificationRules(),
+  "/add-classification",regValidate.classificationRules(),
   regValidate.checkClassificationData,
  utilities.handleErrors(invController.addClassification),
 );
