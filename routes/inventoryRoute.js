@@ -19,8 +19,7 @@ router.get("/delete/:invId", utilities.handleErrors(invController.buildDeleteInv
 /* ***********************
  *  Add the new Classification
   *************************/
-router.post(
-  "/add-classification",regValidate.classificationRules(),
+router.post("/add-classification",regValidate.classificationRules(),
   regValidate.checkClassificationData,
  utilities.handleErrors(invController.addClassification),
 );
@@ -35,7 +34,7 @@ router.get("/add-inventory", invController.BuildAddInventory);
   *************************/
 router.post(
   "/add-inventory",
-  regValidate.addInventoryRules(),
+  regValidate.InventoryRules(),
   regValidate.checkInventoryData,
   utilities.handleErrors(invController.AddNewInventory),
 );
