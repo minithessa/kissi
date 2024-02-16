@@ -1,0 +1,43 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%- messages() %>
+    <% if (errors) { %>
+      <ul class="notice">
+     <% errors.array().forEach(error => { %>
+       <li><%= error.msg %></li>
+    <%  }) %>
+     </ul>
+    <% } %>
+
+    <div>
+      <form action="/view/delete" method="post">
+        <div class="form-wrapper">
+          <div class="form-header">
+            <h2>Delete view</h2>
+            
+          </div>
+          <div>
+
+            <div>
+              <label>
+                  <span>Comment:</span>
+                  <input aria-label="Comment" type="text" disabled readonly aria-readonly="true" name="view_comment" required aria-required="true" value="<%= locals.view_comment %>" >
+              </label>
+            </div>
+
+            <div>
+                <input type="submit" name="submit" value="Confirm Delete">
+            </div>
+          </div>
+          <div>
+            <input type="hidden" name="view_id"
+            <% if(locals.view_id) { %> value="<%= locals.view_id %>"
+            <% } %>>
+          </div>
+        </div>
+        </form>
+      </div>
