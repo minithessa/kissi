@@ -6,7 +6,7 @@
 
     <%- messages() %>
     <% if (errors) { %>
-      <ul class="notice">
+      <ul>
      <% errors.array().forEach(error => { %>
        <li><%= error.msg %></li>
     <%  }) %>
@@ -15,8 +15,8 @@
 
     <div>
       <form action="/view/delete" method="post">
-        <div class="form-wrapper">
-          <div class="form-header">
+        <div>
+          <div>
             <h2>Delete view</h2>
             
           </div>
