@@ -1,0 +1,58 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<div>
+  <form  action="/account/register" method="post">
+    <div>
+      <div>
+        <h2>Register Account</h2>
+      </div>
+      <div>
+        <span>* Required</span>
+         <div>
+          <label>
+            <span>First Name:</span><span>*Required</span>
+            <input type="text" name="account_firstname"pattern="[A-Za-z ]{3,50}">
+          </label>
+        </div>
+         <div>
+          <label>
+            <span>Last Name:</span><span>Required*</span>
+            <input type="text" 
+            name="account_lastname"pattern="[A-Za-z ]{3,50}">
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>Email:</span><span>*Required</span>
+            <input type="email" name="account_email">
+          </label>
+        </div>
+        <div>
+          <label>
+            <span>Password:</span><span>Required*</span>
+            <input type="password" name="account_password">
+          </label>
+        </div>
+         <div>
+          <label>
+          <span>Account Type:</span><span>Required*</span>
+            <select  Type" name="account_type">
+              <option value="client">Client</option>
+              <option value="manager">Manager</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+        </div>
+        <div>
+          <input type="submit" name="submit" value="Register">
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+  </form>
+</div>
