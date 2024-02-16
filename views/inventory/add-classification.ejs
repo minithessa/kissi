@@ -6,28 +6,28 @@
 
     <%- messages() %>
     <% if (errors) { %>
-      <ul class="notice">
+      <ul>
      <% errors.array().forEach(error => { %>
        <li><%= error.msg %></li>
     <%  }) %>
      </ul>
     <% } %>
 
-    <div id="add-classification">
-        <form id="classForm" action="/inv/addClassification" method="post">
+    <div>
+        <form action="/inv/addClassification" method="post">
         <div>
           <div>
             <h2>Add Classification</h2>
           </div>
           <div>
-            <span>* Required</span>
+            <span>Required*</span>
             <div>
               <label>
-                  <span>Classification Name:</span><span>*</span>
-                  <input aria-label="Classification Name" type="text" name="classification_name" aria-required="true" required>
+                  <span>Classification Name:</span><span>Required*</span>
+                  <input type="text" name="classification_name">
               </label>
             </div>
-            <div class="form-button">
+            <div>
                 <input id="submitButton" type="submit" name="submit" value="Submit">
              </form>
               </div>
