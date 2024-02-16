@@ -1,0 +1,70 @@
+<% if (title) { %>
+  <h1><%= title %></h1>
+<% } else {
+  res.redirect('/')
+} %>
+
+<%- messages() %>
+<% if (errors) { %>
+  <ul>
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
+<% if(locals.account_id != locals.accountData.account_id) {  %>
+  res.redirect('/account/update/<%- locals.accountData.account_id %>')
+<% } %>
+<% if(locals.account_id != locals.accountData.account_id) %>
+<div id="update-account">
+  <form action="/account/update" method="post">
+    <div>
+      <label>
+        <span>First Name:</span><span>Required*</span>
+        <input type="text" name="account_firstname" pattern="[A-Za-z ]{3,50}" value="<%= locals.account_firstname %>">
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>Last Name:</span><span>Required*</span>
+        <input type="text" name="account_lastname"  pattern="[A-Za-z ]{3,50}" value="<%= locals.account_lastname %>">
+      </label>
+    </div>
+    <div>
+      <label>
+        <span>Email:</span><span>Required*</span>
+        <input type="email" name="account_email" value="<%= locals.account_email %>">
+      </label>
+    </div>
+    <input type="hidden" name="account_id" value="<%- locals.account_id %>">
+    <div>
+      <input id="submitButton" type="submit" name="submit" value="Update Account">
+    </div>
+</form>
+<form action="/account/updatePassword" method="post">
+<div>
+  <label>
+    <span>Password must be at least 12 characters long and contain 1 capital, 1 number, and 1 special character.</span>
+<br>
+<span>Password:</span><span>Required*</span>
+  <input id="password1" type="password" name="account_password" pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$" required aria-required="true"><span id="showpw">&#128065;</span>
+  </label>
+</div><label>
+        <span>Account Type:</span><span>Required*</span>
+        <select Type name="account_type">
+          <option value="client">Client</option>
+          <option value="manager">Manager</option>
+          <option value="admin">Admin</option>
+        </select>
+      </label>
+    </div>
+  -->
+
+    <input type="hidden" name="account_id" value="<%- locals.account_id %>">
+    <div>
+      <input id="pwResetButton" type="submit" name="submit" value="Update Account">
+    </div>
+    <div>
+      </div>
+  </form>
+</div>
