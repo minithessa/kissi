@@ -11,6 +11,7 @@ const utilities= require("./utilities/")
 const session = require("express-session")
 const bodyParser = require("body-parser")
 const pool = require('./database/')
+const viewRoute = require("./routes/viewRoute")
 const cookieParser = require("cookie-parser")
 
 
