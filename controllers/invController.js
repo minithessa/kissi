@@ -1,6 +1,6 @@
 const invModel = require("../models/inventory-model")
 const utilities = require("../utilities/")
-const reviewModel = require("../models/reviewModel")
+const viewModel = require("../models/viewModel")
 const invCont = {}
 
 /* ***************************
