@@ -6,7 +6,6 @@ const utilities = require('../utilities')
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken")
 require("dotenv").config()
-
 const accountCont = {}
 
 /* ****************************************
