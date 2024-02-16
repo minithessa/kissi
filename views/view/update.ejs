@@ -1,0 +1,41 @@
+<% if (title) { %>
+    <h1><%= title %></h1>
+    <% } else {
+      res.redirect('/')
+    } %>
+
+    <%- messages() %>
+    <% if (errors) { %>
+      <ul class="notice">
+     <% errors.array().forEach(error => { %>
+       <li><%= error.msg %></li>
+    <%  }) %>
+     </ul>
+    <% } %>
+
+    <div>
+      <form action="/view/update" method="post">
+        <div>
+          <div>
+            <h2>Update view</h2>
+          </div>
+          <div>
+            <span>* Required</span>
+            <div>
+              <label>
+                  <span>Comment:</span><span>*</span>
+                  <input aria-label="Comment" type="text" name="view_comment" required aria-required="true" value="<%= locals.view_comment %>" >
+              </label>
+            </div>
+             <div>
+                <input  type="submit" name="submit" value="Update Vehicle">
+            </div>
+          </div>
+          <div>
+            <input type="hidden" name="view_id"
+            <% if(view_id) { %> value="<%= view_id %>"
+            <% } %>>
+          </div>
+        </div>
+        </form>
+      </div>
