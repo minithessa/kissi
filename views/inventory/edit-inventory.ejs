@@ -56,46 +56,46 @@
             <div>
               <label>
                   <span>Description:</span><span>Required*</span>
-                  <textarea rows="4" cols="80" name="inv_description" required aria-required="true"><%= locals.inv_description %></textarea>
+                  <textarea rows="4" cols="80" name="inv_description"><%= locals.inv_description %></textarea>
               </label>
             </div>
 
             <div>
               <label>
                   <span>Image:</span><span>Required*</span>
-                  <input aria-label="Vehicle Image file" type="text" name="inv_image" required aria-required="true" value="<%= locals.inv_image %>">
+                  <input type="text" name="inv_image"value="<%= locals.inv_image %>">
               </label>
             </div>
 
             <div>
               <label>
                   <span>Thumbnail:</span><span>*</span>
-                  <input aria-label="Vehicle Thumbnail" type="text" name="inv_thumbnail" required aria-required="true" value="<%= locals.inv_thumbnail %>">
+                  <input type="text" name="inv_thumbnail"value="<%= locals.inv_thumbnail %>">
               </label>
             </div>
 
             <div>
               <label>
                   <span>Price:</span><span>*</span>
-                  <input aria-label="Vehicle Price" type="text" name="inv_price" required aria-required="true" value="<%= locals.inv_price %>" pattern="\d{4,6}">
+                  <input type="text" name="inv_price"value="<%= locals.inv_price %>" pattern="\d{4,6}">
               </label>
             </div>
 
             <div>
               <label>
                   <span>Milage:</span><span>*</span>
-                  <input aria-label="Vehicle Milage" type="text" name="inv_miles" required aria-required="true" value="<%= locals.inv_miles %>" pattern="\d{1,6}">
+                  <input type="text" name="inv_miles"value="<%= locals.inv_miles %>" pattern="\d{1,6}">
               </label>
             </div>
 
             <div>
               <label>
                   <span>Color:</span><span>*</span>
-                  <input aria-label="Vehicle Color" type="text" name="inv_color" required aria-required="true" value="<%= locals.inv_color %>" pattern=".{3,100}">
+                  <input type="text" name="inv_color"value="<%= locals.inv_color %>" pattern=".{3,100}">
               </label>
             </div>
 
-            <div class="form-button">
+            <div>
                 <input id="submitButton" type="submit" name="submit" value="Update Vehicle">
             </div>
           </div>
