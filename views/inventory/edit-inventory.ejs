@@ -34,35 +34,35 @@
 
             <div>
               <label>
-                  <span>Make:</span><span>*</span>
-                  <input aria-label="Vehicle Make" type="text" name="inv_make" required aria-required="true" value="<%= locals.inv_make %>" pattern="[A-Za-z ]{3,20}" >
+                  <span>Make:</span><span>Required*</span>
+                  <input type="text" name="inv_make"value="<%= locals.inv_make %>" pattern="[A-Za-z ]{3,20}" >
               </label>
             </div>
 
             <div>
               <label>
-                  <span>Model:</span><span>*</span>
-                  <input aria-label="Vehicle Model" type="text" name="inv_model" required aria-required="true" value="<%= locals.inv_model %>" pattern="[A-Za-z ]{3,20}">
+                  <span>Model:</span><span>Required*</span>
+                  <input type="text" name="inv_model" value="<%= locals.inv_model %>" pattern="[A-Za-z ]{3,20}">
               </label>
             </div>
 
             <div>
               <label>
-                  <span>Year:</span><span>*</span>
-                  <input aria-label="Vehicle Year" type="text" name="inv_year" required aria-required="true" value="<%= locals.inv_year %>" pattern="19[\d]{2}|20\d{2}">
+                  <span>Year:</span><span>Required*</span>
+                  <input type="text" name="inv_year"value="<%= locals.inv_year %>" pattern="19[\d]{2}|20\d{2}">
               </label>
             </div>
 
             <div>
               <label>
-                  <span>Description:</span><span>*</span>
-                  <textarea aria-label="Vehicle Description" rows="4" cols="80" name="inv_description" required aria-required="true"><%= locals.inv_description %></textarea>
+                  <span>Description:</span><span>Required*</span>
+                  <textarea rows="4" cols="80" name="inv_description" required aria-required="true"><%= locals.inv_description %></textarea>
               </label>
             </div>
 
             <div>
               <label>
-                  <span>Image:</span><span>*</span>
+                  <span>Image:</span><span>Required*</span>
                   <input aria-label="Vehicle Image file" type="text" name="inv_image" required aria-required="true" value="<%= locals.inv_image %>">
               </label>
             </div>
